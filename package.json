@@ -1,0 +1,27 @@
+{
+  "name": "wired-readme-generator",
+  "version": "1.0.0",
+  "description": "An CLI app used to create a qaulity ReadME.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EvanRC/Wired-ReadME-Generator.git"
+  },
+  "keywords": [
+    "ReadME",
+    "Generation",
+    "NodeJS"
+  ],
+  "author": "Evan Carlson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/EvanRC/Wired-ReadME-Generator/issues"
+  },
+  "homepage": "https://github.com/EvanRC/Wired-ReadME-Generator#readme",
+  "dependencies": {
+    "inquirer": "^9.2.12"
+  }
+}
