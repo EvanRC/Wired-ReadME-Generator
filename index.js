@@ -4,17 +4,17 @@ const fs = require('fs'); // File system module for file operations
 
 const questions = [
     {
-        type:'input', // Type of question, here it's a simple input 
+        type: 'input', // Type of question, here it's a simple input 
         name: 'title', // Key under whuch the asnwer will be stored
         message: 'What is the name of your project?', // Question Text
         validate: (input) => { // Validation function for the input
             // If inout is provided, return true, else log the message and retrn false
-            return input ? true : (console.log(this.message), false) 
+            return input ? true : (console.log(this.message), false)
         }
     },
     // Aditional questions follow same structure:
     {
-        type:'input',
+        type: 'input',
         name: 'description',
         message: 'What is the description of your project?',
         validate: (input) => {
@@ -22,7 +22,7 @@ const questions = [
         }
     },
     {
-        type:'input',
+        type: 'input',
         name: 'installation',
         message: 'Will your project require installation instruction?',
         validate: (input) => {
@@ -30,7 +30,7 @@ const questions = [
         }
     },
     {
-        type:'input',
+        type: 'input',
         name: 'Usage',
         message: 'How is this project used? (enter usage instruction)',
         validate: (input) => {
@@ -38,7 +38,7 @@ const questions = [
         }
     },
     {
-        type:'input',
+        type: 'input',
         name: 'Contributions',
         message: 'Do you want others to contribute? (Please provide Constribution instructions if applicable)',
         validate: (input) => {
@@ -46,7 +46,7 @@ const questions = [
         }
     },
     {
-        type:'input',
+        type: 'input',
         name: 'Testing',
         message: 'How can users run tests for your Project? (Please provide the command or steps)',
         validate: (input) => {
@@ -54,7 +54,7 @@ const questions = [
         }
     },
     {
-        type:'input',
+        type: 'input',
         name: 'Credits',
         message: 'Credit others for their contribution to the project?',
         validate: (input) => {
@@ -65,7 +65,7 @@ const questions = [
         type: 'list',
         message: "You have a license for that Repo?? (Choose one valid license):",
         name: "license",
-        choices:[
+        choices: [
             "apache-2.0",
             "bsl-1.0",
             "bsd-2-clause",
@@ -89,7 +89,7 @@ const questions = [
         }
     },
     {
-        type:'input',
+        type: 'input',
         name: 'GitHub',
         message: 'What is your github username?',
         validate: (input) => {
@@ -97,15 +97,15 @@ const questions = [
         }
     },
     {
-        type:'input',
+        type: 'input',
         name: 'Email',
         message: 'What is your email address?',
         validate: (input) => {
             return input ? true : (console.log(this.message), false)
         }
     },
-    
-    
+
+
 ];
 
 // Function to write a ReadMe file
@@ -125,16 +125,16 @@ function writeToFile(fileName, data) {
 function init() {
     //  Starting to inquirer prompt with an array of questions 
     inquirer
-    .prompt(questions)
-    .then((data) => {
-        // After successful input, process the data
-        const markdown = generateMarkdown(data); // Convert data to markdown format 
-        writeToFile('ReadMe.md', markdown); // Write the markdown to a file 
-    })
-    .catch((error) => { 
-        // If there's an error in the inquirer process, log the error 
-        console.log(error);
-    });
+        .prompt(questions)
+        .then((data) => {
+            // After successful input, process the data
+            const markdown = generateMarkdown(data); // Convert data to markdown format 
+            writeToFile('ReadMe.md', markdown); // Write the markdown to a file 
+        })
+        .catch((error) => {
+            // If there's an error in the inquirer process, log the error 
+            console.log(error);
+        });
 }
 
 // Starting the apllication by calling the init function
