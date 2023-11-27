@@ -75,7 +75,7 @@ function renderLicenseSection(license) {
 // Function to generate the complete markdown content for the README
 function generateMarkdown(data) {
   // starts with the project title 
-  let markdown = `# ${data.title}/n/n`;
+  let markdown = `# ${data.title}\n\n`;
   // adds the license badge section if a license is provided
   if (data.license) {
     markdown += `## License Badge/n${renderLicenseBadge(data.license)}\n\n`;
@@ -96,8 +96,8 @@ function generateMarkdown(data) {
   });
 
   // Adds the Installation, Usage, and credits sections 
-  markdown += `\n## Installation\n\n${data.installation}\n\n## Usage\n\n${data.usage}\n\n`;
-  markdown += `## Credits\n\n${data.credits}\n\n## License\n\n${renderLicenseSection(data.license)}\n\n`;
+  markdown += `\n## Installation\n\n${data.installation}\n\n## Usage\n\n${data.Usage}\n\n`;
+  markdown += `## Credits\n\n${data.Credits}\n\n## License\n\n${renderLicenseSection(data.license)}\n\n`;
 
   // Optionally adds teh features, How to contribute, and Tests sections if data is available 
   if (data.features) {
@@ -112,10 +112,10 @@ function generateMarkdown(data) {
     markdown += `## Tests\n\n${data.tests}\n\n`;
   }
 
-  // Adds cintact information with GitHub link and enail
+  // Adds contact information with GitHub link and enail
   markdown += `## Questions?\n\n`;
-  markdown += `[${data.github}](https://github.com/${data.github})\n\n`;
-  markdown += `Email: ${data.email}\n`;
+  markdown += `[${data.GitHub}](https://github.com/${data.GitHub})\n\n`;
+  markdown += `Email: ${data.Email}\n`;
 
   // returns the complete Markdown content
   return markdown;

@@ -22,6 +22,6 @@
   },
   "homepage": "https://github.com/EvanRC/Wired-ReadME-Generator#readme",
   "dependencies": {
-    "inquirer": "^9.2.12"
+    "inquirer": "^8.2.4"
   }
 }

@@ -1,4 +1,5 @@
 // including necessary Node.js modules 
+const generateMarkdown = require('./utils/generateMarkdown') // generateMarkdown JS 
 const inquirer = require('inquirer'); // Inquier for the interactive CLI 
 const fs = require('fs'); // File system module for file operations 
 
@@ -8,7 +9,7 @@ const questions = [
         name: 'title', // Key under whuch the asnwer will be stored
         message: 'What is the name of your project?', // Question Text
         validate: (input) => { // Validation function for the input
-            // If inout is provided, return true, else log the message and retrn false
+            // If input is provided, return true, else log the message and return false
             return input ? true : (console.log(this.message), false)
         }
     },
@@ -24,7 +25,7 @@ const questions = [
     {
         type: 'input',
         name: 'installation',
-        message: 'Will your project require installation instruction?',
+        message: 'Will your project require installation instructions?',
         validate: (input) => {
             return input ? true : (console.log(this.message), false)
         }
