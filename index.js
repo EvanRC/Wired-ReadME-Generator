@@ -1,19 +1,21 @@
-// TODO: Include packages needed for this application
-const inquirer = require('inquirer');
-const fs = require('fs'); //for file system operations
-// TODO: Create an array of questions for user input
+// including necessary Node.js modules 
+const inquirer = require('inquirer'); // Inquier for the interactive CLI 
+const fs = require('fs'); // File system module for file operations 
+
 const questions = [
     {
-        type:'input',
-        name: 'title',
-        message: 'What is the name of your project?',
-        validate: (input) => {
-            return input ? true : (console.log(this.message), false)
+        type:'input', // Type of question, here it's a simple input 
+        name: 'title', // Key under whuch the asnwer will be stored
+        message: 'What is the name of your project?', // Question Text
+        validate: (input) => { // Validation function for the input
+            // If inout is provided, return true, else log the message and retrn false
+            return input ? true : (console.log(this.message), false) 
         }
     },
+    // Aditional questions follow same structure:
     {
         type:'input',
-        name: 'Description',
+        name: 'description',
         message: 'What is the description of your project?',
         validate: (input) => {
             return input ? true : (console.log(this.message), false)
@@ -106,11 +108,34 @@ const questions = [
     
 ];
 
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+// Function to write a ReadMe file
+function writeToFile(fileName, data) {
+    // Using writeFile method from fs module to write data to a file 
+    fs.writeFile(fileName, data, (err) => {
+        if (err) { // if there's an error during file writing 
+            console.log(err); // Log the error
+        } else {
+            // If no error, log that the file was successfully written
+            console.log(`Successfully wrote ${fileName}`);
+        }
+    });
+}
 
-// TODO: Create a function to initialize app
-function init() {}
+// Function to initialize application 
+function init() {
+    //  Starting to inquirer prompt with an array of questions 
+    inquirer
+    .prompt(questions)
+    .then((data) => {
+        // After successful input, process the data
+        const markdown = generateMarkdown(data); // Convert data to markdown format 
+        writeToFile('ReadMe.md', markdown); // Write the markdown to a file 
+    })
+    .catch((error) => { 
+        // If there's an error in the inquirer process, log the error 
+        console.log(error);
+    });
+}
 
-// Function call to initialize app
+// Starting the apllication by calling the init function
 init();
