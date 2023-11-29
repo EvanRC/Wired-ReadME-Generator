@@ -1,10 +1,10 @@
-# Test
+# Wired ReadME Generator 
 
-## License Badge/n[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+## License Badge/n[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Description
 
-test 3
+This is a node CLI application that will prompt you with a series of questions to fill out sections of a ReadME and then Generates one based on your answers.
 
 ## Table of Contents
 
@@ -15,26 +15,26 @@ test 3
 
 ## Installation
 
-nope
+Clone the repository to your local machine then start the app by using node index.js in the terminal.
 
 ## Usage
 
-why\
+This app can be used to generate a high quality ReadME for the user and save them time by not having to right a new one themselves everytime they have a new project. 
 
 ## Credits
 
-ASD
+N/A
 
 ## License
 
 
-        (https://opensource.org/licenses/Apache-2.0)
+        (https://opensource.org/licenses/MIT)
 
-        The license used for this application is: apache-2.0 license. 
+        The license used for this application is: mit license. 
         Click on the link above for more information.
 
 ## Questions?
 
-[sd](https://github.com/sd)
+[EvanRC](https://github.com/EvanRC)
 
-Email: ASFSDF
+Email: Test@gmail.com
